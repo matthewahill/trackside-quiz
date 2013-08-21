@@ -1,0 +1,27 @@
+#reset {
+  display:none;
+}
+
+p.center{
+text-align:center;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	height:150px;
+}
+
+img.cams {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width:90%;
+}
+
+iframe.center {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+	}

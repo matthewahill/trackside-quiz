@@ -1,0 +1,12 @@
+CACHE MANIFEST
+index.html
+js/database.js
+css/database.css
+
+# handsignals images
+images/flattow.png
+images/medical/png
+images/oil.png
+images/rescue.png
+/images/safetocross.png
+

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" manifest="/offline.appcache">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CAMS Training Quiz</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<link rel="stylesheet" href="css/database.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/googlemap.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZuxeIvncOpIil9dZPPOHphh1ZUCmemI0&sensor=true"></script>
+</head> 
+<body>
+	
+	   
+<!-- splash 'page' -->
+<section data-role="page"  id="splash">
+	<div data-role="content">	
+		<p class="center">Welcome to the CAMS Training Quiz Application</p>
+		<br>
+		<br>
+		<img class="cams" src="http://www.cams.com.au/media/37/camslogo_154x47.jpg"/>
+		<br>
+		<img class="cams" src="http://www.cams.com.au/media/100814/cams.png" />
+			</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main">Tap here to continue</a></li>
+                         </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+	</section><!-- /page -->
+
+<!-- main menu 'page' -->
+<section data-role="page"  id="main">
+	<div data-role="header">
+		<h1>Main Menu</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+		<div data-role="controlgroup">
+    <a href="#quizmenu" data-role="button" data-transition="fade">Start Quiz</a>
+    <a href="#resetmenu" data-role="button" data-transition="fade">Reset Quiz</a>
+	<a href="#location" data-role="button" data-transition="fade">View your current location</a>
+   	<a href="http://www.cams.com.au/get-involved/officials/become-an-official" rel="external" data-role="button">Visit CAMS Officials Website</a>
+	
+</div>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+             
+					<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- reset menu 'page' -->
+<section data-role="page"  id="resetmenu">
+	<div data-role="header">
+		<h1>Reset Quiz Menu</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+		<div data-role="controlgroup">
+   <p class="center" id="resettext"></p>
+   <a href="#main" data-transition="fade" data-direction="reverse" data-role="button">Return to Main Menu</a></li>
+</div>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+             
+					<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- quizmenu 'page' -->
+<section data-role="page"  id="quizmenu">
+	<div data-role="header">
+		<h1>Instructions</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+	<p class="center">The quiz is seperated into two halves - the first contains 5 questions regarding flag signals and the second has 5 questions regarding hand signals.</p>
+	<br>
+	<p class="center">Each question has 4 answers to choose from. Select one then press the 'Submit' button to move onto the next question</p>
+	<br>
+	<br>
+	<p class="center">Good Luck</p>
+		<div data-role="controlgroup">
+    <a href="#flags1" data-role="button" data-transition="fade">Start The Quiz</a>
+</div>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- flags1 'page' -->
+<section data-role="page"  id="flags1">
+	<div data-role="header">
+		<h1>Flag Signals Q 1</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>Which flag signal/s would you use to indicate to drivers that your sector has a blocked track:</legend>
+        <input type="radio" name="flag-q-1" id="flag-q-1-choice-1" value="blue">
+        <label for="flag-q-1-choice-1">Blue</label>
+        <input type="radio" name="flag-q-1" id="flag-q-1-choice-2" value="red">
+        <label for="flag-q-1-choice-2">Red</label>
+        <input type="radio" name="flag-q-1" id="flag-q-1-choice-3" value="double">
+        <label for="flag-q-1-choice-3">Double Yellow</label>
+		<input type="radio" name="flag-q-1" id="flag-q-1-choice-4" value="other">
+        <label for="flag-q-1-choice-4" checked>Don't Know</label>
+    </fieldset>
+	<a href ="#flags2" data-role="button" class="submit1">Submit</a>
+	  </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- flags2 'page' -->
+<section data-role="page"  id="flags2">
+	<div data-role="header">
+		<h1>Flag Signals Q 2</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>Which flag signal/s would you use to indicate to drivers that the session has been cancelled:</legend>
+        <input type="radio" name="flag-q-2" id="flag-q-2-choice-1" value="blue">
+        <label for="flag-q-2-choice-1">Blue</label>
+        <input type="radio" name="flag-q-2" id="flag-q-2-choice-2" value="red">
+        <label for="flag-q-2-choice-2">Red</label>
+        <input type="radio" name="flag-q-2" id="flag-q-2-choice-3" value="double">
+        <label for="flag-q-2-choice-3">Double Yellow</label>
+		<input type="radio" name="flag-q-2" id="flag-q-2-choice-4" value="other">
+        <label for="flag-q-2-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#flags3" data-role="button" class="submit2">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- flags3 'page' -->
+<section data-role="page"  id="flags3">
+	<div data-role="header">
+		<h1>Flag Signals Q 3</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>During a race, a tow truck enters the track and is in your sector. What flag must be displayed:</legend>
+        <input type="radio" name="flag-q-3" id="flag-q-3-choice-1" value="red">
+        <label for="flag-q-3-choice-1">Red</label>
+        <input type="radio" name="flag-q-3" id="flag-q-3-choice-2" value="white">
+        <label for="flag-q-3-choice-2">White</label>
+        <input type="radio" name="flag-q-3" id="flag-q-3-choice-3" value="Black with Orange Disc">
+        <label for="flag-q-3-choice-3">Black with Orange Disc</label>
+		<input type="radio" name="flag-q-3" id="flag-q-3-choice-4" value="other">
+        <label for="flag-q-3-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#flags4" data-role="button" class="submit3">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- flags4 'page' -->
+<section data-role="page"  id="flags4">
+	<div data-role="header">
+		<h1>Flag Signals Q 4</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>During a race, a slower car is about to be lapped. What flag must be displayed:</legend>
+        <input type="radio" name="flag-q-4" id="flag-q-4-choice-1" value="red">
+        <label for="flag-q-4-choice-1">Red</label>
+        <input type="radio" name="flag-q-4" id="flag-q-4-choice-2" value="Black with Orange Disc">
+        <label for="flag-q-4-choice-2">Black with Orange Disc</label>
+        <input type="radio" name="flag-q-4" id="flag-q-4-choice-3" value="blue">
+        <label for="flag-q-4-choice-3">Blue</label>
+		<input type="radio" name="flag-q-4" id="flag-q-4-choice-4" value="other">
+        <label for="flag-q-4-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#flags5" data-role="button" class="submit4">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- flags5 'page' -->
+<section data-role="page"  id="flags5">
+	<div data-role="header">
+		<h1>Flag Signals Q 5</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>During a race, what flag would you display if there is an incident before your sector and after your sector it is clear:</legend>
+        <input type="radio" name="flag-q-5" id="flag-q-5-choice-1" value="green">
+        <label for="flag-q-5-choice-1">Green</label>
+        <input type="radio" name="flag-q-5" id="flag-q-5-choice-2" value="blue">
+        <label for="flag-q-5-choice-2">Blue</label>
+        <input type="radio" name="flag-q-5" id="flag-q-5-choice-3" value="Black with Orange Disc">
+        <label for="flag-q-5-choice-3">Black with Orange Disc</label>
+		<input type="radio" name="flag-q-5" id="flag-q-5-choice-4" value="other">
+        <label for="flag-q-5-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#flagscores" data-role="button" class="submit5">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- flag scores 'page' -->
+<section data-role="page"  id="flagscores">
+	<div data-role="header">
+		<h1>Total Score</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+
+<p id="flag1choice"></p>
+<p id="flag2choice"></p>
+<p id="flag3choice"></p>
+<p id="flag4choice"></p>
+<p id="flag5choice"></p>
+<p class="center" id="totalscore"></p>
+	<a href ="#handsignals1" data-role="button" id="flagover">Continue the Quiz</a>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- handsignals1 'page' -->
+<section data-role="page"  id="handsignals1">
+	<div data-role="header">
+		<h1>Hand Signals Q 1</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+		<img class="center" src="images/medical.png" />
+        <legend>What does this hand signal represent:</legend>
+        <input type="radio" name="handsignal-q-1" id="handsignal-q-1-choice-1" value="oil">
+        <label for="handsignal-q-1-choice-1">Oil on the track</label>
+        <input type="radio" name="handsignal-q-1" id="handsignal-q-1-choice-2" value="medical">
+        <label for="handsignal-q-1-choice-2">Medical Required</label>
+        <input type="radio" name="handsignal-q-1" id="handsignal-q-1-choice-3" value="flat tow">
+        <label for="handsignal-q-1-choice-3">Flat Tow</label>
+		<input type="radio" name="handsignal-q-1" id="handsignal-q-1-choice-4" value="other">
+        <label for="handsignal-q-1-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#handsignals2" data-role="button" class="handsignalsubmit1">Submit</a>
+	  </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- handsignals2 'page' -->
+<section data-role="page"  id="handsignals2">
+	<div data-role="header">
+		<h1>Hand Signals Q 2</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+			<img class="center" src="images/flattow.png" />
+        <legend>What does this hand signal represent:</legend>
+        <input type="radio" name="handsignal-q-2" id="handsignal-q-2-choice-1" value="medical">
+        <label for="handsignal-q-2-choice-1">Medical Required</label>
+        <input type="radio" name="handsignal-q-2" id="handsignal-q-2-choice-2" value="flat tow">
+        <label for="handsignal-q-2-choice-2">Flat Tow</label>
+        <input type="radio" name="handsignal-q-2" id="handsignal-q-2-choice-3" value="oil">
+        <label for="handsignal-q-2-choice-3">Oil on the Track</label>
+		<input type="radio" name="handsignal-q-2" id="handsignal-q-2-choice-4" value="other">
+        <label for="handsignal-q-2-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#handsignals3" data-role="button" class="handsignalsubmit2">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- handsignals3 'page' -->
+<section data-role="page"  id="handsignals3">
+	<div data-role="header">
+		<h1>Hand Signals Q 3</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>What does this hand signal represent:</legend>
+			<img class="center" src="images/safetocross.png" />
+        <input type="radio" name="handsignal-q-3" id="handsignal-q-3-choice-1" value="flat tow">
+        <label for="handsignal-q-3-choice-1">Flat Tow</label>
+        <input type="radio" name="handsignal-q-3" id="handsignal-q-3-choice-2" value="lift tow">
+        <label for="handsignal-q-3-choice-2">Lift Tow</label>
+        <input type="radio" name="handsignal-q-3" id="handsignal-q-3-choice-3" value="safe to cross">
+        <label for="handsignal-q-3-choice-3">Safe to Cross</label>
+		<input type="radio" name="handsignal-q-3" id="handsignal-q-3-choice-4" value="other">
+        <label for="handsignal-q-3-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#handsignals4" data-role="button" class="handsignalsubmit3">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- handsignals4 'page' -->
+<section data-role="page"  id="handsignals4">
+	<div data-role="header">
+		<h1>Hand Signals Q 4</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>What does this hand signal represent:</legend>
+			<img class="center" src="images/rescue.png" />
+        <input type="radio" name="handsignal-q-4" id="handsignal-q-4-choice-1" value="rescue">
+        <label for="handsignal-q-4-choice-1">Rescue Required</label>
+        <input type="radio" name="handsignal-q-4" id="handsignal-q-4-choice-2" value="help requested">
+        <label for="handsignal-q-4-choice-2">Help Requested</label>
+        <input type="radio" name="handsignal-q-4" id="handsignal-q-4-choice-3" value="flat tow">
+        <label for="handsignal-q-4-choice-3">Flat Tow</label>
+		<input type="radio" name="handsignal-q-4" id="handsignal-q-4-choice-4" value="other">
+        <label for="handsignal-q-4-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#handsignals5" data-role="button" class="handsignalsubmit4">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- handsignals5 'page' -->
+<section data-role="page"  id="handsignals5">
+	<div data-role="header">
+		<h1>Hand Signals Q 5</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<form>
+        <fieldset data-role="controlgroup">
+        <legend>What does this hand signal represent:</legend>
+			<img class="center" src="images/oil.png" />
+        <input type="radio" name="handsignal-q-5" id="handsignal-q-5-choice-1" value="oil">
+        <label for="handsignal-q-5-choice-1">Oil on the Track</label>
+        <input type="radio" name="handsignal-q-5" id="handsignal-q-5-choice-2" value="lift tow">
+        <label for="handsignal-q-5-choice-2">Lift Tow</label>
+        <input type="radio" name="handsignal-q-5" id="handsignal-q-5-choice-3" value="medical required">
+        <label for="handsignal-q-5-choice-3">Medical Required</label>
+		<input type="radio" name="handsignal-q-5" id="handsignal-q-5-choice-4" value="other">
+        <label for="handsignal-q-5-choice-4">Don't Know</label>
+    </fieldset>
+	<a href ="#handsignalscores" data-role="button" class="handsignalsubmit5">Submit</a>
+	 </form>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- hand signal scores 'page' -->
+<section data-role="page"  id="handsignalscores">
+	<div data-role="header">
+		<h1>Total Score</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+
+<p id="hand1choice"></p>
+<p id="hand2choice"></p>
+<p id="hand3choice"></p>
+<p id="hand4choice"></p>
+<p id="hand5choice"></p>
+<p class="center" id="totalhandscore"></p>
+<a href ="#main" data-role="button" id="handover">Return to the Main Menu</a>
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- googlemaps 'page' -->
+<section data-role="page"  id="location">
+	<div data-role="header">
+		<h1>Google Maps Location</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<iframe class="center" id="googleFrame" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""></iframe>
+<br />
+	<a href="#main" class="findme" data-role="button">Find My Location using Google Maps</a>
+
+	</div><!-- /content -->
+	<div data-role="footer"    data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+<!-- author 'page' -->
+<section data-role="page"  id="author">
+	<div data-role="header">
+		<h1>About the Author</h1>
+	</div><!-- /header -->
+	<div data-role="content">	
+<p class="center">Matthew is a 3rd year Bachelor of IT student from Darwin in Australia.</p>
+<br>
+<p class="center">He wrote this application to help new trackside motorsport marshalls easily learn the flag and handsignals required to 
+communicate trackside with other marshalls from a distance</p>	
+<br>
+<p class="center">If you have any comments, please email matthewahill@live.com or send him a tweet - @matthewahill</p>
+	<a href="#main" data-role="button">Continue</a>
+
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#main" data-icon="home" data-transition="fade" data-direction="reverse">Home</a></li>
+            
+				<li><a href="#author" data-icon="info">About the Author</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</section><!-- /page -->
+
+</body>
+</html>
